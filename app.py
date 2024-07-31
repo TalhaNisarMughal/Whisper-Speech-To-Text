@@ -39,7 +39,7 @@ def process_transcribing(file_name, file_contents, processor, interpreter, input
             transcript_text = wp.transcribe_mp4_audio_chunks(output_directory, processor, interpreter, input_tensor, output_tensor)
         else:
             transcript_text = wp.transcribe_audio_chunks(output_directory, processor, interpreter, input_tensor, output_tensor)
-        transcript_text = transcript_text[0]
+        transcript_text = ' '.join(transcript_text)
         st.write("Transcript")
         st.markdown(transcript_text)
     # os.remove(file_path)
