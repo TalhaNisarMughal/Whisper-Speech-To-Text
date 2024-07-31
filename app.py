@@ -6,11 +6,11 @@ from streamlit_mic_recorder import mic_recorder
 
 @st.cache_resource
 def load_whisper_model(model_type):
-    if model_type == "Whisper en to en":
+    if model_type == "Whisper English to English":
         return wp.load_whisper_model("openai/whisper-small.en",
                                      'https://drive.google.com/uc?id=14AVtj9MqoOeIcryPwG0Wv86hxE-MBS12',
                                      'whisper-tiny-en.tflite')
-    elif model_type == "Whisper many to en":
+    elif model_type == "Whisper Multi-lingual":
         return wp.load_whisper_model("openai/whisper-small",
                                      'https://drive.google.com/uc?id=1V6vRfvCK4s7G0nM0Hpl_Djy_nNGcT3Hx',
                                      'whisper.tflite')
