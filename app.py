@@ -49,7 +49,7 @@ def main():
 
     # Add radio buttons for selecting the model type
     # model_type = st.radio("Select Whisper model:", ("Whisper en to en", "Whisper many to en"))
-    model_type = st.selectbox("Select Whisper model:", ("Whisper en to en", "Whisper many to en"))
+    model_type = st.selectbox("Select Whisper model:", ("Whisper English to English", "Whisper Multi-lingual"))
 
     # Load the selected model
     processor, interpreter, input_tensor, output_tensor = load_whisper_model(model_type)
