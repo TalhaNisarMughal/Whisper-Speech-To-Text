@@ -25,8 +25,8 @@ async def transcribe_audio(file: UploadFile = File(...)):
         
     """
     # Check if the file format is supported
-    if file.content_type not in ["audio/wav", "audio/mpeg", "audio/mp4", "audio/m4a", "audio/mp3", "audio/flac"]:
-        raise HTTPException(status_code=400, detail="Unsupported file format. Supported file formats are wav, mp3, flac, mp4, and m4a")
+    if file.content_type not in ["audio/wav", "audio/mpeg", "audio/mp4", "audio/mp3", "audio/flac"]:
+        raise HTTPException(status_code=400, detail="Unsupported file format. Supported file formats are wav, mp3, flac, and mp4")
     
     file_contents = await file.read()  # Read the content of the uploaded file
 
