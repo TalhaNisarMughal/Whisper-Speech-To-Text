@@ -170,9 +170,12 @@ class Whisper():
         return output_dir
     
     def save_voice(self, filename, data):
-        directory = os.path.join(self.ROOT_DIR, "voices")
-        directory.mkdir(parents=True, exist_ok=True)
-        filepath = os.path.join(directory, filename)
+        # Use pathlib's Path to handle directories
+        directory = self.ROOT_DIR / "voices"
+        directory.mkdir(parents=True, exist_ok=True)  # This is now a Path object
+
+        # Join the directory path with the filename to get the full path
+        filepath = directory / filename
         with open(filepath, "wb") as f:
             f.write(data)
             
